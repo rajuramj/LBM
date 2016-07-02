@@ -1,0 +1,1 @@
+/usr/bin/c++   -Wall -Winline -Wshadow -pedantic    CMakeFiles/lbm.dir/test/main.cpp.o CMakeFiles/lbm.dir/src/Lattice.cpp.o  -o lbm -rdynamic 

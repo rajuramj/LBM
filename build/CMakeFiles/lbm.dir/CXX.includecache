@@ -1,0 +1,34 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/Lattice.hpp
+Type.hpp
+../include/Type.hpp
+vector
+-
+map
+-
+iostream
+-
+cassert
+-
+
+../include/Type.hpp
+utility
+-
+string
+-
+
+/auto-home/export/stud/pi02dawu/SiWiR2/LBM_git/LBM/src/Lattice.cpp
+Lattice.hpp
+/auto-home/export/stud/pi02dawu/SiWiR2/LBM_git/LBM/src/Lattice.hpp
+
+/auto-home/export/stud/pi02dawu/SiWiR2/LBM_git/LBM/test/main.cpp
+Lattice.hpp
+/auto-home/export/stud/pi02dawu/SiWiR2/LBM_git/LBM/test/Lattice.hpp
+
