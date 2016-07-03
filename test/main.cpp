@@ -1,4 +1,3 @@
-
 #include "Lattice.hpp"
 
 int main(int argc, char* argv[])
@@ -20,9 +19,16 @@ int main(int argc, char* argv[])
 
     std::cout << "Data successfully read!" << std::endl;
 
-    Lattice l1(2,2);
+    //Lattice::fillMap();
+     Lattice l1(2,2);
     //l1(std::string("N"),0, 0) = 2.5;
-    l1(0, 0) = 2.5;
+    l1(0, 0) = 1.2;
+    l1(1,0) = 2.4;
+    l1(0,1) = 2.45;
+
+    l1.display();
+
+    std::cout << "l1(0,1) is : " << l1(0,1) << std::endl;
 
     return 0;
 }

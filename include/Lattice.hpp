@@ -20,8 +20,9 @@ private:
 
 public:
     // Maps the direction to index
-    static std::map<std::string, size_t> dirMap;
+    static std::map<std::string, size_t> dirMap; //= {{"C", 0}, {"N", 1}, {"S", 2}, {"W", 3}, {"E", 4}, {"NE", 5}, {"NW", 6}, {"SW", 7}, {"SE", 8} };
 
+    //static  void fillMap();
     //Constructor
     Lattice(const size_t&, const size_t&);
 
@@ -33,7 +34,7 @@ public:
     const real& operator() (const size_t&, const size_t&) const;
     //const real& operator() (const size_t&, const size_t&, const std::string&) const;
 
-    void display();
+    void display() const;
 };
 
 #endif
