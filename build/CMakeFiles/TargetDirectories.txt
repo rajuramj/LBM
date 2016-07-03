@@ -1,1 +1,0 @@
-/auto-home/export/stud/pi02dawu/SiWiR2/LBM_git/LBM/build/CMakeFiles/lbm.dir
