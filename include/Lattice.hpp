@@ -19,6 +19,19 @@ private:
     std::vector<real> data_;
 
 public:
+    // enum data for directions
+    enum Direction {
+        C = 0,
+        N = 1,
+        S = 2,
+        W = 3,
+        E = 4,
+        NE = 5,
+        NW = 6,
+        SW = 7,
+        SE = 8
+    };
+
     // Maps the direction to index
     static std::map<std::string, size_t> dirMap; //= {{"C", 0}, {"N", 1}, {"S", 2}, {"W", 3}, {"E", 4}, {"NE", 5}, {"NW", 6}, {"SW", 7}, {"SE", 8} };
 
@@ -27,12 +40,12 @@ public:
     Lattice(const size_t&, const size_t&);
 
     //Non const version, used for assigning
-    real& operator() (const size_t&, const size_t&);
-    //real& operator() (const size_t&, const size_t&, const std::string&);
+    //real& operator() (const size_t&, const size_t&);
+    real& operator() (const size_t&, const size_t&, const Direction&);
 
     //Const version, used for accessing const array object, Safe(returns const reference)
-    const real& operator() (const size_t&, const size_t&) const;
-    //const real& operator() (const size_t&, const size_t&, const std::string&) const;
+    //const real& operator() (const size_t&, const size_t&) const;
+    const real& operator() (const size_t&, const size_t&, const Direction&) const;
 
     void display() const;
 };
