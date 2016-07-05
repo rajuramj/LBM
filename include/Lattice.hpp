@@ -15,36 +15,23 @@ private:
     size_t numCellsX;
     size_t numCellsY;
 
-    //vector to store probability density function values.
+    //vector to store probability density function(f_q) values.
     std::vector<real> data_;
 
+    // init lattice weights
+    static constexpr real weights[] = {4.0/9.0, 1.0/9.0, 1.0/9.0, 1.0/9.0, 1.0/9.0, 1.0/36.0, 1.0/36.0, 1.0/36.0, 1.0/36.0};
+
 public:
-    // enum data for directions
-    enum Direction {
-        C = 0,
-        N = 1,
-        S = 2,
-        W = 3,
-        E = 4,
-        NE = 5,
-        NW = 6,
-        SW = 7,
-        SE = 8
-    };
-
-    // Maps the direction to index
-    static std::map<std::string, size_t> dirMap; //= {{"C", 0}, {"N", 1}, {"S", 2}, {"W", 3}, {"E", 4}, {"NE", 5}, {"NW", 6}, {"SW", 7}, {"SE", 8} };
-
-    //static  void fillMap();
     //Constructor
     Lattice(const size_t&, const size_t&);
 
+    // Sets the initails f_q's
+    void init();
+
     //Non const version, used for assigning
-    //real& operator() (const size_t&, const size_t&);
     real& operator() (const size_t&, const size_t&, const Direction&);
 
     //Const version, used for accessing const array object, Safe(returns const reference)
-    //const real& operator() (const size_t&, const size_t&) const;
     const real& operator() (const size_t&, const size_t&, const Direction&) const;
 
     void display() const;
