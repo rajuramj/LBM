@@ -12,7 +12,7 @@
 class Lattice{
 
 private:
-    size_t numCellsX;
+    size_t numCellsX;  // This includes ghost cells
     size_t numCellsY;
 
     //vector to store probability density function(f_q) values.
@@ -29,12 +29,17 @@ public:
     void init();
 
     //Non const version, used for assigning
-    real& operator() (const size_t&, const size_t&, const Direction&);
+     real& operator() (const size_t&, const size_t&, const Direction&);
+     real& operator() (const size_t&, const size_t&, const size_t&);
 
     //Const version, used for accessing const array object, Safe(returns const reference)
+    // This operator is never used in this assignment
     const real& operator() (const size_t&, const size_t&, const Direction&) const;
+    const real& operator() (const size_t&, const size_t&, const size_t&) const;
 
     void display() const;
 };
+
+
 
 #endif

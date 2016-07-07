@@ -1,4 +1,11 @@
+#include "Lattice.hpp"
+#include "Parameters.hpp"
 #include "Simulation.hpp"
+
+real nx, ny;
+real latticeVisc, latticeAcc;
+real relaxRate; //relaxation rate
+
 
 int main(int argc, char** argv)
 {	
@@ -17,20 +24,26 @@ int main(int argc, char** argv)
         exit(EXIT_FAILURE);
     }
 
+    std::cout<<" \n "<< std::endl;
     std::cout << "Data successfully read!" << std::endl;
 
-    Lattice l1(2,2);
-    l1(0, 0, C) = 1.5;
-    l1(0, 0, N) = 2.5;
-    l1(0, 0, NE) = 2.455;
+//    Lattice l1(2,2);
+//    l1(0, 0, C) = 1.5;
+//    l1(0, 0, N) = 2.5;
+//    l1(0, 0, NE) = 2.455;
 
-    l1.display();
+//    l1.display();
 
-    std::cout << "l1(0,1,NE) is : " << l1(0,0,NE) << std::endl;
+//    std::cout << "l1(0,1,NE) is : " << l1(0,0,NE) << std::endl;
 
-    std::cout << "==================================\n";
+    std::string arg = argv[1];
+    Parameters param(arg);
+    param.calcDomDim();
+    std::cout<< "Param Converted !"<< std::endl;
 
-    Simulation sim(0,0);
+    Simulation sim(3,3);
+    sim.printLattice();
+    sim.setNoSlipBCs();
     sim.printLattice();
 
     return 0;
